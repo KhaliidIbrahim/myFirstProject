@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Crud.css" />
+    <title>Crud App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="head">
+        <h1>Crud</h1>
+        <h3>System de gestion des produits</h3>
+      </div>
+      <div class="inputs">
+        <input maxlength="15" type="text" id="title" placeholder="Title" />
+        <div class="price">
+          <input onkeyup="getTotal()" type="number" max="10" id="price" placeholder="Price" />
+          <input onkeyup="getTotal()" type="number" id="taxe" placeholder="Taxes" />
+          <input onkeyup="getTotal()" type="number" id="ads" placeholder="Ads" />
+          <input onkeyup="getTotal()" type="number" id="discount" placeholder="Discount" />
+          <small id="total"></small>
+        </div>
+        <input type="number" placeholder="Count" id="count"  />
+        <input type="text" placeholder="Category" id="category" />
+        <button id="submit">Create</button>
+        <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="Search" />
+        <div  class="btnSearch">
+          <button id="srByTtile" onclick="searchById(this.id)" >Search By Title</button>
+          <button id="srByCategory" onclick="searchById(this.id)">Search By Category</button>
+        </div>
+        <button id ="dltAll" onclick="deleteAll()" style="display: none;"></button>
+      </div>
+      <div class="outpouts">
+        <table id="table">
+          <thead>
+            <tr>
+              <td>id</td>
+              <td>title</td>
+              <td>price</td>
+              <td>taxes</td>
+              <td>ads</td>
+              <td>discount</td>
+              <td>total</td>
+              <td>category</td>
+              <td>update</td>
+              <td>Delete</td>
+            </tr>
+          </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="Crud.js"></script>
+  </body>
+</html>
